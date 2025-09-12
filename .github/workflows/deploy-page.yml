@@ -1,0 +1,35 @@
+name: GH Deploy
+
+on:
+ push:
+  branches:
+   - main
+
+jobs:
+  build:
+    name: Publish site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main
+      uses: actions/checkout@v4
+    - run: |
+      apt install racket
+      raco pkg install pollen --checksum fb0eeab2171251368d51d41c7298ae7d96735530
+      raco pkg install megaparsack --checksum 1d01c9ee274f66de4f193c73ff391ed6be553448
+      raco pollen publish . /pages-output/
+    - name: Upload static files as artifact
+      id: deployment
+      uses: actions/upload-pages-artifact@v4 # or specific "vX.X.X" version tag for this action
+      with:
+        path: /pages-output/
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
