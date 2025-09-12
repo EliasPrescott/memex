@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>◊select['h1 doc] | Elias Prescott</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/tufte.css" />
+  </head>
+  <body hx-boost="true">
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+      </nav>
+    </header>
+    ◊(->html doc #:splice? #t)
+
+    ◊(->html (backlinks here))
+
+    <script src="/static/htmx.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+a {
+  text-decoration: none;
+  font-variant: small-caps;
+}
+
+ul {
+  list-style-type: square;
+}
+
+header {
+  width: 55%;
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  font-size: x-large;
+  border-right: 1px dotted #ddd;
+  padding: 0.25em;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+img.icon {
+  width: 1em;
+  height: auto;
+  color: red;
+}
