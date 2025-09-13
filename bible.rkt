@@ -165,7 +165,7 @@
 
 (define (resolve-reference/either str)
   (map 
-    (match-λ
+    (match-lambda
       [(list version book chapter (list 'verse-range start end))
        (let* ([translation (get-translation version)]
               [book (get-book translation book)]
