@@ -13,7 +13,7 @@ jobs:
     - name: Checkout main
       uses: actions/checkout@v4
     - run: |
-        apt install racket
+        sudo apt install racket
         raco pkg install pollen --checksum fb0eeab2171251368d51d41c7298ae7d96735530
         raco pkg install megaparsack --checksum 1d01c9ee274f66de4f193c73ff391ed6be553448
         raco pollen publish . /pages-output/
