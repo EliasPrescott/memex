@@ -12,8 +12,11 @@
         <a href="/posts">Posts</a>
       </nav>
     </header>
-    ◊(->html doc #:splice? #t)
 
+    <article>
+      ◊(->html doc #:splice? #t)
+    </article>
+    
     ◊(->html (backlinks here))
 
     <script src="/static/htmx.js"></script>
