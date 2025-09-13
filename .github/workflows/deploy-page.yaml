@@ -14,8 +14,8 @@ jobs:
       uses: actions/checkout@v4
     - run: |
         sudo apt install racket
-        raco pkg install --checksum fb0eeab2171251368d51d41c7298ae7d96735530 pollen
-        raco pkg install --checksum 1d01c9ee274f66de4f193c73ff391ed6be553448 megaparsack
+        raco pkg install --checksum fb0eeab2171251368d51d41c7298ae7d96735530 --deps search-auto pollen
+        raco pkg install --checksum 1d01c9ee274f66de4f193c73ff391ed6be553448 --deps search-auto megaparsack
         raco pollen publish . /pages-output/
     - name: Upload static files as artifact
       id: deployment
