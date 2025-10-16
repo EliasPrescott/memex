@@ -11,6 +11,8 @@
 
   You can find me on ◊a[#:href "https://github.com/EliasPrescott"]{GitHub}, ◊a[#:href "https://www.linkedin.com/in/elias-prescott"]{LinkedIn}, or in real life.
 
+  There is a new version of this site under construction ◊[#:href "https://staging.australorp.dev"]{here}.
+
   ◊h3{Latest Posts}
 
   ◊(post-list)
